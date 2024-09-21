@@ -1,11 +1,3 @@
-/***************************************/
-/*           CHIP8 EMULATOR            */
-/*                                     */
-/*  AUTHOR  : SREE NITHI S V           */
-/*  LICENSE : MPL                      */
-/*                                     */
-/***************************************/
-
 #include <stddef.h>
 #include<stdio.h>      
 #include<stdbool.h>    
@@ -13,7 +5,7 @@
 #include<string.h>      
 
 #define DISCARD_UNUSED(var) (void)(var)     /* BOILERPLATE -- IGNORE */
-#define println(var) printf("[INFO] %s\n", var);   // Defines a Macro which adds "\n" to the String
+#define println(var) printf("[INFO] %s\n", var);
 
 // Enum to Indicate the Status of the CHIP8 Emulator
 typedef enum {
@@ -315,40 +307,6 @@ void emulate_inst(CHIP_Struct *chipStruct, CFG_Struct *configStruct){
             break;
     }
 }
-
-// void update_screen(const SM_Struct sdl, const CFG_Struct config, CHIP_Struct *chip8) {
-//     SDL_Rect rect = {.x = 0, .y = 0, .w = config.Scale_Factor, .h = config.Scale_Factor};
-
-//     // Grab bg color values to draw outlines
-//     const uint8_t bg_r = (config.C_Background >> 24) & 0xFF;
-//     const uint8_t bg_g = (config.C_Background >> 16) & 0xFF;
-//     const uint8_t bg_b = (config.C_Background >>  8) & 0xFF;
-//     const uint8_t bg_a = (config.C_Background >>  0) & 0xFF;
-
-//     const uint8_t fg_r = (config.C_Foreground >> 24) & 0xFF;
-//     const uint8_t fg_g = (config.C_Foreground >> 16) & 0xFF;
-//     const uint8_t fg_b = (config.C_Foreground >>  8) & 0xFF;
-//     const uint8_t fg_a = (config.C_Foreground >>  0) & 0xFF;
-
-//     // Loop through display pixels, draw a rectangle per pixel to the SDL window
-//     for (uint32_t i = 0; i < sizeof chip8->DISPLAY; i++) {
-//         // Translate 1D index i value to 2D X/Y coordinates
-//         // X = i % window width
-//         // Y = i / window width
-//         rect.x = (i % config.W_Width) * config.Scale_Factor;
-//         rect.y = (i / config.W_Width) * config.Scale_Factor;
-
-//         if (chip8->DISPLAY[i]) {
-//             SDL_SetRenderDrawColor(sdl.Renderer,fg_r , fg_g, fg_b, fg_a);
-//             SDL_RenderFillRect(sdl.Renderer, &rect);
-//         } else {
-//             SDL_SetRenderDrawColor(sdl.Renderer, bg_r, bg_g, bg_b, bg_a);
-//             SDL_RenderFillRect(sdl.Renderer, &rect);
-//         }
-//     }
-
-//     SDL_RenderPresent(sdl.Renderer);
-// }
 
 void update_screen(const SM_Struct *mainStruct, const CFG_Struct *configStruct, CHIP_Struct *chipStruct){
     SDL_Rect rectVar = {0, 0, configStruct->Scale_Factor, configStruct->Scale_Factor};
