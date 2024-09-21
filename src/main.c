@@ -1,8 +1,8 @@
 #include <stddef.h>
-#include<stdio.h>      
-#include<stdbool.h>    
-#include<SDL2/SDL.h>   
-#include<string.h>      
+#include <stdio.h>      
+#include <stdbool.h>    
+#include <SDL2/SDL.h>   
+#include <string.h>      
 
 #define DISCARD_UNUSED(var) (void)(var)     /* BOILERPLATE -- IGNORE */
 #define println(var) printf("[INFO] %s\n", var);
